@@ -5,6 +5,8 @@
 
 # Docs
 *.docx
+*.pdf
+*.txt
 
 # VSCode
 .vscode/*
