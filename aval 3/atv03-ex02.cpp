@@ -7,14 +7,14 @@
 // C = 2pi.r
 // D = 2r
 // A = pi * r²
-// r = c/2pi
+// r = c/(2pi)
 
 #include <iostream>
 #include <math.h>
 #include <cstdlib>
 using namespace std;
 
-double const pi = 3.14;
+double const pi = 3.14159265359;
 
 double calcularDiametro(double c);
 double calcularRaio(double c);
@@ -64,7 +64,7 @@ int main(int argc, char const *argv[])
 }
 
 double calcularRaio(double c){
-    return c / 2*pi;
+    return c / (2*pi);
 }
 double calcularDiametro(double c){
     return calcularRaio(c) * 2;
