@@ -25,4 +25,3 @@ int main(int argc, char const *argv[])
 int calculo(int a, int b){
     return pow(a - b, 2);
 }
-

@@ -27,11 +27,11 @@ int main(int argc, char const *argv[]) {
 }
 
 void pedirValores(){
-   cout << "Insira o comprimento do retângulo: ";
+   cout << "Insira o comprimento do retangulo: ";
    cin >> comprimento;
-   cout << "Insira a largura do retângulo: ";
+   cout << "Insira a largura do retangulo: ";
    cin >> largura;
-   cout << "Insira a altura do retângulo: ";
+   cout << "Insira a altura do retangulo: ";
    cin >> altura;
 
 }
@@ -42,5 +42,5 @@ float calculoVolume(float c, float l, float a){
 
 void mostrar(){
     volume = calculoVolume(comprimento, largura, altura);
-    cout << "O volume do retângulo é: " << volume << endl;
+    cout << "O volume do retangulo e: " << volume << endl;
 }

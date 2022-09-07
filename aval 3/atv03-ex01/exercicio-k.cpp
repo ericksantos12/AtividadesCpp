@@ -10,7 +10,7 @@ int main(int argc, char const *argv[])
     double cotacao = 0;
     double reais = 0;
 
-    cout << "Insira a cotação do dolar: ";
+    cout << "Insira a cotacao do dolar: ";
     cin >> cotacao;
     cout << "Insira seu dinheiro: R$";
     cin >> reais;
