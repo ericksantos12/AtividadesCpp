@@ -26,8 +26,6 @@ int mostrarMenu();
 int main(int argc, char const *argv[])
 {
     int opcao = 0;
-    double comprimento = 0;
-    double resultado = 0;
 
     MENU:
 
@@ -37,23 +35,17 @@ int main(int argc, char const *argv[])
     switch (opcao)
     {
     case 1:
-        comprimento = lerComprimento();
-        resultado = calcularRaio(comprimento);
-        cout << "O raio do circulo em metros sera: " << resultado << endl;
+        cout << "O raio do circulo em metros sera: " << calcularRaio(lerComprimento()) << endl;
         system("pause");
         break;
     
     case 2:
-        comprimento = lerComprimento();
-        resultado = calcularDiametro(comprimento);
-        cout << "O diametro do circulo em metros sera: " << resultado << endl;
+        cout << "O diametro do circulo em metros sera: " << calcularDiametro(lerComprimento()) << endl;
         system("pause");
         break;
 
     case 3:
-        comprimento = lerComprimento();
-        resultado = calcularArea(comprimento);
-        cout << "A area do circulo em metros sera: " << resultado << endl;
+        cout << "A area do circulo em metros sera: " << calcularArea(lerComprimento()) << endl;
         system("pause");
         break;
 
