@@ -19,7 +19,7 @@ struct Salario colab;
 
 void lerValores(){
     system("cls");
-    cout << "Infome o valor do salario mensal -> ";
+    cout << "Informe o valor do salario mensal -> ";
     cin >> colab.SM;
     cout << "Informe o percentual de reajuste -> ";
     cin >> colab.PR;
