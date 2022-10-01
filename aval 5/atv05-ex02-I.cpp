@@ -39,7 +39,7 @@ void calcularBhaskara(float *a, float *b, float *c){
     
     if (delta < 0)
     {
-        cout << "Não existem raizes reais.";
+        cout << "Nao existem raizes reais." << endl;
     } else {
         x1 = (- (*b) + sqrt(delta))/2 * (*a);
         x2 = (- (*b) - sqrt(delta))/2 * (*a);
