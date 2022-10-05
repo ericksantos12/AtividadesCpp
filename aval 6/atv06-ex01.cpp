@@ -15,15 +15,16 @@
 #include <cstdlib>
 #include <ctype.h>
 #include <iomanip>
+#define MAX 3
 using namespace std;
 
 struct colaborador
 {
-    string nome[5];
-    int idade[5];
-    string sexo[5];
-    double salario[5];
-    double salarioNovo[5];
+    string nome[MAX];
+    int idade[MAX];
+    string sexo[MAX];
+    double salario[MAX];
+    double salarioNovo[MAX];
 } cadastro;
 
 struct colaborador * p_cadastro = &cadastro; // ponteiro pro struct
@@ -97,9 +98,10 @@ void listarLinhasStruct(){
      * left irá alinhar o texto à esquerda
      */
 
+    const int larg_nome = 20;
     const int largura = 10;
 
-    cout << "|" << left << setw(largura) << "Nome" << "|";
+    cout << "|" << left << setw(larg_nome) << "Nome" << "|";
     cout << left << setw(largura) << "Idade" << "|";
     cout << left << setw(largura) << "Sexo" << "|";
     cout << left << setw(largura) << "Salario" << "|";
@@ -108,7 +110,7 @@ void listarLinhasStruct(){
     for (int i = 0; i < tamanho; i++)
     {
         if (p_cadastro->nome[i].size() != 0){ // Verifica se o nome da atual posição é ou não nulo, caso não seja ele irá mostrar na tela
-            cout << "|" << left << setw(largura) << p_cadastro->nome[i] << "|";
+            cout << "|" << left << setw(larg_nome) << p_cadastro->nome[i] << "|"; // lista os registros do struct
             cout << left << setw(largura) << p_cadastro->idade[i] << "|";
             cout << left << setw(largura) << p_cadastro->sexo[i] << "|";
             cout << left << setw(largura) << p_cadastro->salario[i] << "|";
@@ -144,6 +146,7 @@ int main(int argc, char const *argv[])
         break;
     
     default:
+        cout << "Opcao invalida!" << endl;
         break;
     }
     system("pause");
