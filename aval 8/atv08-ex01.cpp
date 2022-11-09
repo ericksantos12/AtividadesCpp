@@ -2,7 +2,7 @@
 I - Faça um menu para testar o programa 4 e faça as alterações a seguir:
 ! B. Insira mais um atributo no struct para armazenar um número aleatório criado por uma função randomica
 ! C. Crie uma função que busque e exiba uma posição qualquer um dos nódulos da estrutura.
-! D. Crie função que informe se a estrutura está vazia. (???? nao entendi)
+! D. Crie função que informe se a estrutura está vazia.
 */
 
 #include "iostream"
@@ -22,6 +22,10 @@ struct me {
 
 cad * ultimoNO;
 cad * primeiroNO;
+
+bool vazia(){
+    return primeiroNO == NULL ? true : false;    
+}
 
 int random(){
     return rand() % 100;
@@ -47,10 +51,17 @@ void alocar() {
 void exibir() {
     cad * temp;
     temp = primeiroNO;
-    while (temp != NULL) {
-        cout << "Numero: " << temp -> num << endl;
-        cout << "Posicao: " << temp -> pos << endl << endl;
-        temp = temp -> liga;
+
+    if (vazia() == true)
+    {
+        cout << "[!] A estrutura esta vazia!" << endl;
+    } else
+    {
+        while (temp != NULL) {
+            cout << "Numero: " << temp -> num << endl;
+            cout << "Posicao: " << temp -> pos << endl << endl;
+            temp = temp -> liga;
+        }       
     }
 }
 
@@ -81,6 +92,7 @@ void exibirPos() {
 
 void destruir() {
     cad * temp;
+    cad * aux;
     temp = primeiroNO;
     while (temp -> liga != NULL) {
         free(temp);
@@ -88,14 +100,51 @@ void destruir() {
     }
     free(primeiroNO);
     free(ultimoNO);
+
+    cont = 0;
+    primeiroNO = NULL;
 }
+
+
 
 int main() {
     srand(time(NULL));
 
-    for (int i = 0; i <= 4; i++)
+    int key = 0;
+
+    MENU:
+    system("cls");
+    cout << "Escolha uma das opcoes: \n1 -- Alocar \n2 -- Exibir \n3 -- Exibir Posicao \n4 -- Destruir \n0 -- Sair \n> ";
+    cin >> key;
+    system("cls");
+
+    switch (key)
+    {
+    case 1:
+        cout << "[!] Alocando numero" << endl;
         alocar();
-    exibir();
-    exibirPos();
-    destruir();
+        break;
+    case 2:
+        cout << "[!] Exibindo posicoes" << endl;
+        exibir();
+        break;
+    case 3:
+        exibirPos();
+        break;
+    case 4:
+        cout << "[!] Destruindo estruturas" << endl;
+        destruir();
+        break;
+    case 0:
+        cout << "[!] Encerrando programa" << endl;
+        destruir();
+        exit(0);
+        break;
+    
+    default:
+        break;
+    }
+    system("pause");
+    goto MENU;
+
 }
